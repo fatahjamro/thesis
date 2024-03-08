@@ -1,0 +1,87 @@
+\chapter{Quantum}
+
+
+$$
+\begin{array}{|c|c|c|c|}
+  \hline
+  \ket{0} & \ket{1} & \ket{2} & \ket{3} \\
+  \hline
+  \ket{1} & \ket{0} & \ket{3} & \ket{2} \\
+  \hline
+  \ket{2} & \ket{3} & \ket{0} & \ket{1} \\
+  \hline
+  \ket{3} & \ket{2} & \ket{1} & \ket{0} \\
+  \hline
+\end{array}
+$$
+
+
+$$
+\begin{array}{|c|c|c|c|}
+  \hline
+  \ket{0} & \ket{1} & \ket{2} & \ket{3} \\
+  \hline
+  \frac{1}{\sqrt{2}}(\ket{1}-\ket{2}) & \frac{1}{\sqrt{5}}(i\ket{0}+2\ket{3}) & \frac{1}{\sqrt{5}}(2\ket{0}+i\ket{3}) & \frac{1}{\sqrt{2}}(\ket{1}+\ket{2}) \\
+  \hline
+  \frac{1}{\sqrt{2}}(\ket{1}+\ket{2}) & \frac{1}{\sqrt{5}}(2\ket{0}+i\ket{3}) & \frac{1}{\sqrt{5}}(i\ket{0}+2\ket{3}) & \frac{1}{\sqrt{2}}(\ket{1}-\ket{2}) \\
+  \hline
+  \ket{3} & \ket{2} & \ket{1} & \ket{0} \\
+  \hline
+\end{array}
+$$ 
+
+
+$$
+\braket{\psi_1 \mid \psi_2} = \sum_{i=0}^{n-1} \psi_1^* \psi_2
+$$
+
+\subsection{Normalized}
+
+\begin{align}
+\ket{\psi} &= \frac{1}{\sqrt{2}}(\ket{1}-\ket{2}) \\
+\ket{\psi} &\rightarrow \begin{bmatrix} 0 \\ \frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} \\ 0 \end{bmatrix} \\
+\Rightarrow \bra{\psi} &= \begin{bmatrix} 0 & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} & 0 \end{bmatrix} \\
+\Rightarrow \braket{\psi \mid \psi} &= \begin{bmatrix} 0 & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} & 0 \end{bmatrix} \begin{bmatrix} 0 \\ \frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} \\ 0 \end{bmatrix} \\
+&= 1
+\end{align}
+
+
+
+\subsection{Orthogonal}
+
+\begin{align}
+\ket{\psi_1} &\rightarrow \begin{bmatrix} 0 \\ \frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} \\ 0 \end{bmatrix} \\
+\ket{\psi_2} &\rightarrow \begin{bmatrix} \frac{i}{\sqrt{5}} \\ 0 \\ 0 \\ \frac{2}{\sqrt{5}} \end{bmatrix} \\
+\Rightarrow \bra{\psi_1} &= \begin{bmatrix} 0 & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} & 0 \end{bmatrix} \\
+\Rightarrow \braket{\psi_1 \mid \psi_2} &= \begin{bmatrix} 0 & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} & 0 \end{bmatrix} \begin{bmatrix} \frac{i}{\sqrt{5}} \\ 0 \\ 0 \\ \frac{2}{\sqrt{5}} \end{bmatrix} \\
+&= (0)(\frac{1}{\sqrt{5}}) + \left(\frac{1}{\sqrt{2}}\right)(0) + (-\frac{1}{\sqrt{2}})(0) + (0)(\frac{2}{\sqrt{5}}) \\
+&= 0
+\end{align}
+
+
+\section{Code}
+
+
+You might consider including a section describing your algorithm and code.
+The minted package is great for displaying short sections of code, as in 
+Listing \ref{code:tuesday}.
+
+
+
+\begin{listing}[H]
+  \begin{minted}{python}
+    # Ian McLoughlin, 2018-02-01
+    # Is it Tuesday?
+
+    import datetime
+
+    if datetime.datetime.today().weekday() == 1:
+      print("Yay! It is Tuesday.")
+    else:
+      print("Unfortunately it is not Tuesday.")
+  \end{minted}
+  \caption{Is it Tuesday?}
+  \label{code:tuesday}
+\end{listing}
+
+\lipsum[10-15]
