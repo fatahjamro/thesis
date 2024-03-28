@@ -1,6 +1,45 @@
 \chapter{Literature}
 \label{section:literature}
 
+\subsection{Definition} \textbf{Qubit}
+
+Schumacher coined the term quantum bit or qubit in 1995~\cite{schumacher1995QuantumCoding} as a two-level quantum system in which information is encoded using two orthogonal states.
+Just like its classical cousin, the qubit can take a value of either 0 or 1. Physically, qubits can be represented as any two-level quantum systems such as
+\begin{itemize}
+  \item The spin of a particle in a magnetic field where up means 0 and down means 1 or
+  \item The polarization of a single photon where horizontal polarization means 1 and vertical polarization means 0.
+\end{itemize}
+
+We can make a quantum computer out of light as well. In both cases 0 and 1 are the only possible states. Geometrically, qubits can be visualized using a shape called the Bloch sphere, an instrument named after Swiss physicist Felix Bloch as in figure~\ref{fig:blochSphere}.
+
+\begin{figure}%[ht]
+\centering
+\begin{tikzpicture}[line join = round, line cap = round]
+  \pgfmathsetmacro{\r}{1} % radius of the sphere
+  \draw (0,0) circle (\r cm); % draw the sphere
+  \draw[-latex] (0,0) -- (\r+1,0); % draw x-axis
+  \draw[-latex] (0,0) -- (0,\r+1); % draw y-axis
+  \draw[-latex] (0,0) -- (-\r-1,0); % draw -x-axis
+  \draw[-latex] (0,0) -- (0,-\r-1); % draw -y-axis
+  \node[above] at (0,\r+1) {$|0\rangle$}; % label for |0>
+  \node[below] at (0,-\r-1) {$|1\rangle$}; % label for |1>
+  \node[right] at (\r+1,0) {$|+\rangle$}; % label for |+>
+  \node[left] at (-\r-1,0) {$|-\rangle$}; % label for |->
+\end{tikzpicture}
+\caption{Bloch Sphere representation for a Qubit.}
+\label{fig:blochSphere}
+\end{figure}
+
+In general, as described in this book~\cite{nielsen2010QuantumComputationQuantum} the state of a qubit is modelled as $\alpha \ket{0} + \beta \ket{1}$ where $\alpha$ is the probability amplitude of the state $\ket{0}$ and $\beta$ that of the state $\ket{1}$.
+A probability amplitude is a complex number $c$ whose squared magnitude $\vert c \vert^2$ gives the probability of finding the quantum system in its associated orthogonal state.
+The probabilities $|\alpha|^2$ and $|\beta|^2$ must therefore sum to one, so qubits are in that sense normalized.
+We define the inner product $\braket{a | b} = \sum_{i=0}^{n} a_i^* b_i$ for $a$ and $b$ in $\mathbb{C}^n$, leading to a Hilbert space.
+The states $\ket{0}$ and $\ket{1}$ form a basis for the Hilbert space.
+Thus, we can write
+$$\ket{0} = \begin{bmatrix} 1 \\ 0 \end{bmatrix} \, \textrm{and} \, \ket{1} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$$
+
+
+
 A comprehensive literature review is a critical component of any academic research, including a Ph.D. thesis.
 It serves several purposes, as follows.
 
