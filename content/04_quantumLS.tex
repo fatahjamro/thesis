@@ -1,5 +1,25 @@
 \chapter{Quantum Latin Squares}
 
+In this chapter we will explain quantum Latin squares with examples at later stage, First we discuss Latin squares, their historical context, and their relationship with Quasi-group and Cayley table(\textit{comment: Yet I need to study more about quasi-group and cayley table}). 
+
+In this thesis the notations are as follows, the set of natural numbers is denoted $\mathbb{N}$ and the set of natural numbers including zero is denoted $\mathbb{N}_0$.
+The set of complex numbers is denoted $\mathbb{C}$.
+The set $\{ k \in \mathbb{N}_0 \mid k < n \}$ of natural numbers (including zero) less than $n$ is denoted $[n]$.
+We index the rows of an array in order with the elements of $[n]$ in their natural order, likewise for the columns.
+
+
+\subsubsection{Latin Squares}
+
+Latin squares were discussed by Euler in 1782~\cite{macneish1922EulerSquares} and Fisher in 1935~\cite{fisher1960DesignExperiments}.
+The latter used Latin squares to design modern hypothesis testing experiments.
+Since then Latin squares have been used in number theory, statistical analysis, game theory, computer science, coding theory, cryptography, and quantum information theory~\cite{keedwell2015LatinSquaresTheir}.
+
+\subsubsection{Quantum Latin squares}
+
+Quantum Latin squares are combinatorial structures analogous to Latin squares.
+A quantum Latin square is an array of $n$ rows and $n$ columns containing elements of $C^n$ such that each row and each column forms an orthonormal basis for $C^n$.
+As above, we define the inner product by $\braket{a | b} = \sum_{i=0}^{n} a_i^* b_i$ for $a$ and $b$ in $\mathbb{C}^n$~\cite{zauner2011QuantumDesignsFoundations}.
+
 
 $$
 \begin{array}{|c|c|c|c|}
