@@ -14,6 +14,33 @@ Latin squares were discussed by Euler in 1782~\cite{macneish1922EulerSquares} an
 The latter used Latin squares to design modern hypothesis testing experiments.
 Since then Latin squares have been used in number theory, statistical analysis, game theory, computer science, coding theory, cryptography, and quantum information theory~\cite{keedwell2015LatinSquaresTheir}.
 
+\begin{definition}[Latin Square]
+  Let $S$ be a set of order $n \in \mathbb{N}$.
+  An $n \times n$ array is called a Latin square of order $n$ if each element of $S$ appears exactly once in each row and exactly once in each column of the array.
+\end{definition}
+
+Suppose we construct a Latin square of order $n$ with elements from $[n]$.
+Then each row and each column contains the elements of $[n]$ in some order. Here $n = 4$ and $[n]=\{0,1,2,3\}$. 
+
+\begin{figure}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    0 & 1 & 2 & 3 \\
+    \hline
+    1 & 0 & 3 & 2 \\
+    \hline
+    2 & 3 & 0 & 1 \\
+    \hline
+    3 & 2 & 1 & 0 \\
+    \hline
+  \end{tabular}
+  \caption{Latin Square}
+  \label{fig:latin_square}
+\end{figure}
+
+ The Figure~\ref{fig:latin_square} is a Latin square of order 4. Each row and each column contain unique elements, there is not any repetition of elements in same row and same column.
+
 \subsubsection{Quantum Latin squares}
 
 Quantum Latin squares are combinatorial structures analogous to Latin squares.
