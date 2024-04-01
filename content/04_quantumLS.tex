@@ -48,35 +48,74 @@ A quantum Latin square is an array of $n$ rows and $n$ columns containing elemen
 As above, we define the inner product by $\braket{a | b} = \sum_{i=0}^{n} a_i^* b_i$ for $a$ and $b$ in $\mathbb{C}^n$~\cite{zauner2011QuantumDesignsFoundations}.
 
 
-$$
-\begin{array}{|c|c|c|c|}
-  \hline
-  \ket{0} & \ket{1} & \ket{2} & \ket{3} \\
-  \hline
-  \ket{1} & \ket{0} & \ket{3} & \ket{2} \\
-  \hline
-  \ket{2} & \ket{3} & \ket{0} & \ket{1} \\
-  \hline
-  \ket{3} & \ket{2} & \ket{1} & \ket{0} \\
-  \hline
-\end{array}
-$$
+\begin{definition}[Quantum Latin Square]
+  Let $Q$ be an $n \times n$ array of elements of $\mathbb{C}^n$ for some $n \in \mathbb{N}$.
+  Then $Q$ is a quantum Latin square of order $n$ if each row and each column of $Q$ forms an orthonormal basis of $\mathbb{C}^n$ according to the inner product $\braket{a | b} = \sum_{i=0}^{n-1} a_i^* b_i$ for $a$ and $b$ in $\mathbb{C}^n$.
+  That is, distinct elements of a row or column are orthogonal to each other, and each element of the array is normalized.
+\end{definition}
 
 
-$$
-\begin{array}{|c|c|c|c|}
-  \hline
-  \ket{0} & \ket{1} & \ket{2} & \ket{3} \\
-  \hline
-  \frac{1}{\sqrt{2}}(\ket{1}-\ket{2}) & \frac{1}{\sqrt{5}}(i\ket{0}+2\ket{3}) & \frac{1}{\sqrt{5}}(2\ket{0}+i\ket{3}) & \frac{1}{\sqrt{2}}(\ket{1}+\ket{2}) \\
-  \hline
-  \frac{1}{\sqrt{2}}(\ket{1}+\ket{2}) & \frac{1}{\sqrt{5}}(2\ket{0}+i\ket{3}) & \frac{1}{\sqrt{5}}(i\ket{0}+2\ket{3}) & \frac{1}{\sqrt{2}}(\ket{1}-\ket{2}) \\
-  \hline
-  \ket{3} & \ket{2} & \ket{1} & \ket{0} \\
-  \hline
-\end{array}
-$$ 
+\noindent Quantum Latin squares were introduced by Musto and Vicary in 2016~\cite{vicary2016QuantumLatinSquares}.
+Let $B_n = \{\ket{i} \mid i \in [n]\}$ be a set of orthonormal quantum state vectors in a quantum state space of dimension $n$.
+Using this notation, we often call $B_n$ the computational basis.
+We can represent any state vector in the space as a linear combination of the elements of $B_n$ over $\mathbb{C}$.
+Then we can easily convert any classical Latin square over $[n]$ to a quantum Latin square with the map $[n] \rightarrow B_n: i \rightarrow \ket{i}$.
+Note that if the Latin square is over some other set of order $n$, we can easily map the elements of the set to the elements of $[n]$ and then use the above map to convert the Latin square to a quantum Latin square.
+Below is an example of order $3$.
 
+
+\begin{figure}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    0 & 1 & 2 & 3 \\
+    \hline
+    1 & 0 & 3 & 2 \\
+    \hline
+    2 & 3 & 0 & 1 \\
+    \hline
+    3 & 2 & 1 & 0 \\
+    \hline
+  \end{tabular} $\rightarrow$
+  $\begin{array}{|c|c|c|c|}
+    \hline
+    \ket{0} & \ket{1} & \ket{2} & \ket{3} \\
+    \hline
+    \ket{1} & \ket{0} & \ket{3} & \ket{2} \\
+    \hline
+    \ket{2} & \ket{3} & \ket{0} & \ket{1} \\
+    \hline
+    \ket{3} & \ket{2} & \ket{1} & \ket{0} \\
+    \hline
+  \end{array}$
+  \caption{Latin Square evolve to quantum Latin Square}
+  \label{fig:Quantum_latin_square}
+\end{figure}   
+
+However, some quantum Latin squares are not the result of such a simple map.
+Below we give an example from Musto's paper~\cite{vicary2016QuantumLatinSquares}.
+
+
+
+\begin{figure}[H]
+  \centering
+  $\begin{array}{|c|c|c|c|}
+    \hline
+    \ket{0} & \ket{1} & \ket{2} & \ket{3} \\
+    \hline
+    \frac{1}{\sqrt{2}}(\ket{1}-\ket{2}) & \frac{1}{\sqrt{5}}(i\ket{0}+2\ket{3}) & \frac{1}{\sqrt{5}}(2\ket{0}+i\ket{3}) & \frac{1}{\sqrt{2}}(\ket{1}+\ket{2}) \\
+    \hline
+    \frac{1}{\sqrt{2}}(\ket{1}+\ket{2}) & \frac{1}{\sqrt{5}}(2\ket{0}+i\ket{3}) & \frac{1}{\sqrt{5}}(i\ket{0}+2\ket{3}) & \frac{1}{\sqrt{2}}(\ket{1}-\ket{2}) \\
+    \hline
+    \ket{3} & \ket{2} & \ket{1} & \ket{0} \\
+    \hline
+    \end{array}$
+  \caption{Example of Quantum Latin Square of order 4}
+  \label{fig:Quantum_latin_square_order_4}
+\end{figure}
+
+
+The element in quantum Latin squares are quantum states which can be in superposition of states as shown in the figure~\ref{fig:Quantum_latin_square_order_4}.
 
 $$
 \braket{\psi_1 \mid \psi_2} = \sum_{i=0}^{n-1} \psi_1^* \psi_2
