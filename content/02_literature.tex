@@ -12,25 +12,46 @@ Physically, qubits can be represented as any two-level quantum systems such as
 \end{itemize}
 
 We can make a quantum computer out of light as well. In both cases 0 and 1 are the only possible states. Geometrically, qubits can be visualized using a shape called the Bloch sphere, an instrument named after Swiss physicist Felix Bloch as in figure~\ref{fig:blochSphere}.
+% \begin{tikzpicture}[line join = round, line cap = round]
+%   \pgfmathsetmacro{\r}{2} % radius of the sphere
+%   \draw (0,0) circle (\r cm); % draw the sphere
+%   \draw[-latex] (0,0) -- (\r+0.5,0); % draw x-axis
+%   \draw[-latex] (0,0) -- (0,\r+0.5); % draw y-axis
+%   \draw[-latex] (0,0) -- (-\r-0.5,0); % draw -x-axis
+%   \draw[-latex] (0,0) -- (0,-\r-0.5); % draw -y-axis
+%   \node[above] at (0,\r+0.5) {$|0\rangle$}; % label for |0>
+%   \node[below] at (0,-\r-0.5) {$|1\rangle$}; % label for |1>
+%   \node[right] at (\r+0.5,0) {$|+\rangle$}; % label for |+>
+%   \node[left] at (-\r-0.5,0) {$|-\rangle$}; % label for |->
+%   \draw[fill=black] (45:\r) circle (2pt); % draw a dot at angle \theta
+%   \node[right] at (45:\r) {$|\psi\rangle$}; % label for |\psi>
+% \end{tikzpicture}
+
+
 \begin{figure}[H]
-\centering
-\begin{tikzpicture}[line join = round, line cap = round]
+  \centering
+\tdplotsetmaincoords{60}{120}
+\begin{tikzpicture}[tdplot_main_coords]
   \pgfmathsetmacro{\r}{2} % radius of the sphere
-  \draw (0,0) circle (\r cm); % draw the sphere
-  \draw[-latex] (0,0) -- (\r+0.5,0); % draw x-axis
-  \draw[-latex] (0,0) -- (0,\r+0.5); % draw y-axis
-  \draw[-latex] (0,0) -- (-\r-0.5,0); % draw -x-axis
-  \draw[-latex] (0,0) -- (0,-\r-0.5); % draw -y-axis
-  \node[above] at (0,\r+0.5) {$|0\rangle$}; % label for |0>
-  \node[below] at (0,-\r-0.5) {$|1\rangle$}; % label for |1>
-  \node[right] at (\r+0.5,0) {$|+\rangle$}; % label for |+>
-  \node[left] at (-\r-0.5,0) {$|-\rangle$}; % label for |->
+  \shade[ball color = gray!40, opacity = 0.5] (0,0) circle (\r cm); % draw the sphere
+  \draw[-latex] (0,0,0) -- (\r+1.25,0,0); % draw x-axis
+  \draw[-latex] (0,0,0) -- (-\r-1.25,0,0); % draw x-axis
+  \draw[-latex] (0,0,0) -- (0,\r+0.5,0); % draw y-axis
+  \draw[-latex] (0,0,0) -- (0,-\r-0.5,0); % draw y-axis
+  \draw[-latex] (0,0,0) -- (0,0,\r+0.5); % draw z-axis
+  \draw[-latex] (0,0,0) -- (0,0,-\r-0.5); % draw z-axis
+  \node[above] at (0,0,\r+0.5) {$|0\rangle$}; % label for |0>
+  \node[below] at (0,0,-\r-0.5) {$|1\rangle$}; % label for |1>
+  \node[right] at (\r+1.75,0,0) {$|+\rangle$}; % label for |+>
+  \node[left] at (-\r-1.75,0,0) {$|-\rangle$}; % label for |->
   \draw[fill=black] (45:\r) circle (2pt); % draw a dot at angle \theta
   \node[right] at (45:\r) {$|\psi\rangle$}; % label for |\psi>
 \end{tikzpicture}
 \caption{Bloch Sphere representation for a Qubit.}
 \label{fig:blochSphere}
 \end{figure}
+
+
 
 Mathematically, the qubit is treated as a mathematical object and the state of a qubit is treated as a vector in a two-dimensional complex vector space, as in equation~\ref{eq:qubit_state}
 \begin{equation}
