@@ -89,12 +89,12 @@ Unitary operators are also discussed in 1977 in book quantum Mechanics by Cohen~
 
 \subsubsection{Operators}
 
-In quantum mechanics, operators are used to represent physical observables(i.e. energy, momentum, position, etc.) and mathematically they these physical observables are represented by Hermitian operators. For instance, the operator corresponding to energy in the Hamiltonian operator~\ref{eq:hamiltonian}.
+In quantum mechanics, operators are used to represent physical observables(i.e. energy, momentum, position, etc.) and mathematically they these physical observables are represented by Hermitian operators. For instance, the operator corresponding to energy in the Hamiltonian operator.
 \begin{equation}
 \hat{H} = \sum_{i=1}^{N}(-\frac{\hbar^{2}}{2m_{i}}\nabla_{i}^{2}+V_{i})
 \label{eq:hamiltonian}
 \end{equation}
-where i is an index over all particles of the system. The result $\hat{H}$ is the Hamiltonian equal to the individual sum of all particles of the system. The average value of an observable A, operator denoted by $\hat{A}$ for a quantum molecular state $\psi{(r)}$ is given by the 'expectation value' formula:
+where i is an index over all particles of the system. The result $\hat{H}$ is the Hamiltonian equal to the individual sum of all particles of the system~\ref{eq:hamiltonian}. The average value of an observable A, operator denoted by $\hat{A}$ for a quantum molecular state $\psi{(r)}$ is given by the 'expectation value' formula:
 
 \begin{equation}
 \langle A \rangle = \int \psi^{*}(r) A \psi(r) dr
@@ -104,7 +104,7 @@ where i is an index over all particles of the system. The result $\hat{H}$ is th
 In Equation \ref{eq:expectation_value}, we calculate the expectation value of the observable $A$ or operator $\hat{A}$. These operators show certain mathematical properties as summarized below:
 
 \begin{itemize}
-    \item The sum and difference of two operators $hat{A}$ and $\hat{B}$ are also operators, given by equation~\ref{eq:sum_diff_operator}.
+    \item The sum and difference of two operators $hat{A}$ and $\hat{B}$ are also operators, given by equation.
         \begin{equation}
             (\hat{A} + \hat{B})f = \hat{A}f + \hat{B}f
             \label{eq:sum_diff_operator}
@@ -122,24 +122,33 @@ In Equation \ref{eq:expectation_value}, we calculate the expectation value of th
         \end{equation}
         for all functions $f$ in equation~\ref{eq:equal_operator}.
 
-    \item The identity operator $\hat{I}$ is defined by equation~\ref{eq:identity_operator}.
+    \item The identity operator $\hat{I}$ is defined by equation.
         \begin{equation}
             \hat{I}f = f
             \label{eq:identity_operator}
         \end{equation}
           Identity element operator does not change anything when it operates on a function.
-    \item The associative law also holds for operators as in equation~\ref{eq:associative_operator}.
+    \item The associative law also holds for operators as in equation.
         \begin{equation}
             \hat{A}(\hat{B}\hat{C}) = (\hat{A}\hat{B})\hat{C}
             \label{eq:associative_operator}
         \end{equation}
-    \item The commutative law does not hold for operators. In general, $\hat{A}\hat{B} \neq \hat{B}\hat{A}$.  It is convenient to define the quantity as in equation~\ref{eq:commutative_operator}.
+    \item The commutative law does not hold for operators. In general, $\hat{A}\hat{B} \neq \hat{B}\hat{A}$.  It is convenient to define the quantity as in equation.
         \begin{equation}
             [\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}
             \label{eq:commutator_operator}
         \end{equation}
-          which is called commutator of $\hat{A}$ and $\hat{B}$. Note that the order matters, so that $[\hat{A}, \hat{B}] \eq -[\hat{B}, \hat{A}]$. If $\hat{A}$ and $\hat{B}$ commute, then $[\hat{A}, \hat{B}] = 0$.
-
+            which is called commutator of $\hat{A}$ and $\hat{B}$. Note that the order matters, so that $[\hat{A}, \hat{B}] = -[\hat{B}, \hat{A}]$. If $\hat{A}$ and $\hat{B}$ commute, then $[\hat{A}, \hat{B}] = 0$.
+    \item The n-th power of an operator $\hat{A}^n$ is defines as $n$ successive applications of the operator, e.g.
+        \begin{equation}
+            \hat{A}^3f = \hat{A}\hat{A}\hat{A}f
+            \label{eq:power_operator}
+        \end{equation}
+    \item The exponential of an operator $\exp(\hat{A})$ is defined by the power series expansion as in equation.
+        \begin{equation}
+            \exp(\hat{A}) = \hat{1} + \hat{A} + \frac{\hat{A}^2}{2!} + \frac{\hat{A}^3}{3!} + \ldots
+            \label{eq:exponential_operator}
+        \end{equation}
   \end{itemize}
 
 \begin{definition}[Unitary Error Basis]
