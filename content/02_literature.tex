@@ -84,7 +84,63 @@ Various physical systems can be used to realize physical qubits such as the two 
 A logical qubit is a mathematical object used to model a physical qubit.
 Where physical qubits are fragile, a logical qubit might be encoded by several physical qubits.
 
-\subsection{Unitary Operators or Unitary Error Bases (UEB)}
+\subsection{Unitary Operators and Unitary Error Bases (UEB)}
+Unitary operators are also discussed in 1977 in book quantum Mechanics by Cohen~\cite{cohen1977quantummechanics1st}.
+
+\subsubsection{Operators}
+
+In quantum mechanics, operators are used to represent physical observables(i.e. energy, momentum, position, etc.) and mathematically they these physical observables are represented by Hermitian operators. For instance, the operator corresponding to energy in the Hamiltonian operator~\ref{eq:hamiltonian}.
+\begin{equation}
+\hat{H} = \sum_{i=1}^{N}(-\frac{\hbar^{2}}{2m_{i}}\nabla_{i}^{2}+V_{i})
+\label{eq:hamiltonian}
+\end{equation}
+where i is an index over all particles of the system. The result $\hat{H}$ is the Hamiltonian equal to the individual sum of all particles of the system. The average value of an observable A, operator denoted by $\hat{A}$ for a quantum molecular state $\psi{(r)}$ is given by the 'expectation value' formula:
+
+\begin{equation}
+\langle A \rangle = \int \psi^{*}(r) A \psi(r) dr
+\label{eq:expectation_value}
+\end{equation}
+
+In Equation \ref{eq:expectation_value}, we calculate the expectation value of the observable $A$ or operator $\hat{A}$. These operators show certain mathematical properties as summarized below:
+
+\begin{itemize}
+    \item The sum and difference of two operators $hat{A}$ and $\hat{B}$ are also operators, given by equation~\ref{eq:sum_diff_operator}.
+        \begin{equation}
+            (\hat{A} + \hat{B})f = \hat{A}f + \hat{B}f
+            \label{eq:sum_diff_operator}
+        \end{equation}
+    \item The product of two operators is defined by 
+        \begin{equation}
+            (\hat{A}\hat{B})f = \hat{A}(\hat{B}f)
+            \label{eq:product_operator}
+        \end{equation}
+
+    \item Two operators are equal if 
+        \begin{equation}
+            \hat{A}f = \hat{B}f
+            \label{eq:equal_operator}
+        \end{equation}
+        for all functions $f$ in equation~\ref{eq:equal_operator}.
+
+    \item The identity operator $\hat{I}$ is defined by equation~\ref{eq:identity_operator}.
+        \begin{equation}
+            \hat{I}f = f
+            \label{eq:identity_operator}
+        \end{equation}
+          Identity element operator does not change anything when it operates on a function.
+    \item The associative law also holds for operators as in equation~\ref{eq:associative_operator}.
+        \begin{equation}
+            \hat{A}(\hat{B}\hat{C}) = (\hat{A}\hat{B})\hat{C}
+            \label{eq:associative_operator}
+        \end{equation}
+    \item The commutative law does not hold for operators. In general, $\hat{A}\hat{B} \neq \hat{B}\hat{A}$.  It is convenient to define the quantity as in equation~\ref{eq:commutative_operator}.
+        \begin{equation}
+            [\hat{A}, \hat{B}] = \hat{A}\hat{B} - \hat{B}\hat{A}
+            \label{eq:commutator_operator}
+        \end{equation}
+          which is called commutator of $\hat{A}$ and $\hat{B}$. Note that the order matters, so that $[\hat{A}, \hat{B}] \eq -[\hat{B}, \hat{A}]$. If $\hat{A}$ and $\hat{B}$ commute, then $[\hat{A}, \hat{B}] = 0$.
+
+  \end{itemize}
 
 \begin{definition}[Unitary Error Basis]
 A set $U$ of $n^2$ unitary $n \times n$ matrices is called a unitary error basis if and only if $U$ is orthonormal with respect to the inner product $\langle A, B \rangle = {\textrm{Tr}(A^\dagger B)} / n$ where $\textrm{Tr}(M)$ is the trace of the matrix $M$ and $M^\dagger$ is the conjugate transpose of $M$.
