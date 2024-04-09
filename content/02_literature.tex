@@ -149,7 +149,28 @@ In Equation \ref{eq:expectation_value}, we calculate the expectation value of th
             \exp(\hat{A}) = \hat{1} + \hat{A} + \frac{\hat{A}^2}{2!} + \frac{\hat{A}^3}{3!} + \ldots
             \label{eq:exponential_operator}
         \end{equation}
-  \end{itemize}
+\end{itemize}
+
+
+\subsubsection{Linear Operators}
+In quantum mechanics most of the operators used are linear operators, The operator is called linear if it satisfies two conditions:
+\begin{enumerate}
+  \centering
+  \item Additivity: $\hat{A}(f + g) = \hat{A}f + \hat{A}g$ 
+    \label{eq:additivity}
+  \item Homogeneity: $\hat{A}(cf) = c\hat{A}f$
+    \label{eq:homogeneity}
+\end{enumerate}
+
+Where $f$ and $g$ are functions and $c$ is a constant.
+
+The only other category of operators relevant to quantum mechanics is the set of antilinear operators, for which
+\begin{equation}
+  \hat{A}(\landa f + \mu g) = \lambda^{*}\hat{A}f + \mu^{*}\hat{A}g
+  \label{eq:antilinear}
+\end{equation}
+
+Time-reversal operators are examples of antilinear operators.
 
 \begin{definition}[Unitary Error Basis]
 A set $U$ of $n^2$ unitary $n \times n$ matrices is called a unitary error basis if and only if $U$ is orthonormal with respect to the inner product $\langle A, B \rangle = {\textrm{Tr}(A^\dagger B)} / n$ where $\textrm{Tr}(M)$ is the trace of the matrix $M$ and $M^\dagger$ is the conjugate transpose of $M$.
