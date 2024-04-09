@@ -151,7 +151,7 @@ In Equation \ref{eq:expectation_value}, we calculate the expectation value of th
         \end{equation}
 \end{itemize}
 
-
+\subsection{Linearity and Antilinearity}
 \subsubsection{Linear Operators}
 In quantum mechanics most of the operators used are linear operators, The operator is called linear if it satisfies two conditions:
 \begin{enumerate}
@@ -171,6 +171,23 @@ The only other category of operators relevant to quantum mechanics is the set of
 \end{equation}
 
 Time-reversal operators are examples of antilinear operators.
+
+
+\subsubsection{Unitary Operators}
+Unitary operator can be defined as an operator $U$ is a unitary if it is bounded linear operator $( U : H \rightarrow H )$ on Hilbert space and its inverse $U^{-1}$ is equal to its adjoint $U^{\dagger}$, Symbolic representation would be:
+\begin{equation}
+  UU^{\dagger} = U^{\dagger}U = I
+  \label{eq:unitary}
+\end{equation}
+
+Where $I$ is the identity operator $(I: H \rightarrow H)$. Unitary operator $U$ is \textit{Surjective} and it preserves the inner product of the Hilbert space, $H$. We can write it as for all vectors $A$ and $B$ in $H$ we get: $$\langle UA, UB \rangle_{H} = \langle A, B \rangle_{H}$$
+
+The product of two unitary operators is also unitary. For instance, If $U$ and $V$ are unitary operators, then $UV$ is also unitary. From equation~\ref{eq:unitary}, we can write: $$ UU^{\dagger} = U^{\dagger}U = I$$ and $$ VV^{\dagger} = V^{\dagger}V = I$$ Then we can write:
+  $$(UV)(UV)^{\dagger} = (UV)(V^{\dagger}U^{\dagger}) = 1$$
+  $$(UV)^{\dagger}(UV) = (V^{\dagger}U^{\dagger})(UV) = 1$$
+
+The product operator UV is unitary also as in show in above example.
+
 
 \begin{definition}[Unitary Error Basis]
 A set $U$ of $n^2$ unitary $n \times n$ matrices is called a unitary error basis if and only if $U$ is orthonormal with respect to the inner product $\langle A, B \rangle = {\textrm{Tr}(A^\dagger B)} / n$ where $\textrm{Tr}(M)$ is the trace of the matrix $M$ and $M^\dagger$ is the conjugate transpose of $M$.
