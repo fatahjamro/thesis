@@ -84,6 +84,52 @@ Various physical systems can be used to realize physical qubits such as the two 
 A logical qubit is a mathematical object used to model a physical qubit.
 Where physical qubits are fragile, a logical qubit might be encoded by several physical qubits.
 
+\subsection{Unitary Operators or Unitary Error Bases (UEB)}
+
+\begin{definition}[Unitary Error Basis]
+A set $U$ of $n^2$ unitary $n \times n$ matrices is called a unitary error basis if and only if $U$ is orthonormal with respect to the inner product $\langle A, B \rangle = {\textrm{Tr}(A^\dagger B)} / n$ where $\textrm{Tr}(M)$ is the trace of the matrix $M$ and $M^\dagger$ is the conjugate transpose of $M$.
+\end{definition}
+
+\noindent Unitary error bases perform a primitive job in quantum error correcting codes and further applications of quantum information processing, such as teleportation and super-dense coding schemes~\cite{klappenecker2003UnitaryErrorBases}.
+
+\subsection{Mutually Unbiased Bases (MUB)}
+
+\begin{definition}[Mutually Unbiased Bases]
+Two orthonormal bases $U$ and $V$ of $\mathbb{C}^n$ are mutually unbiased if and only if $|\braket{u|v}|^2 = \frac{1}{n}$ for all $u$ in $U$ and all $v$ in $V$.
+\end{definition}
+
+\noindent Mutually unbiased bases embed the complementary concept of quantum formalism that relates to~\cite{paterek2010ConnectionMutuallyUnbiased}.
+Two orthonormal bases of Hilbert space are said to be mutually unbiased if the measurement of one state does not disclose the result of the other state~\cite{song2020ConstructionMutuallyUnbiased}.
+Transition probability from any state of the first basis to any state of the second basis is independent of the two chosen states~\cite{song2020ConstructionMutuallyUnbiased}.
+
+
+\subsubsection*{Mutually Unbiased Bases and Unitary Error Bases}
+The idea of mutually unbiased bases was posed by Schwinger in 1960~\cite{schwinger1960UnitaryOperatorBases} and play an important role in quantum information theory~\cite{klappenecker2004ConstructionsMutuallyUnbiased}.
+They are used in quantum state estimation~\cite{adamson2008ExperimentalQuantumState, grassl2005TomographyQuantumStates}, quantum cryptography protocols, and quantum error correcting codes~\cite{cerf2002SecurityQuantumKey}.
+
+Mutually unbiased bases can be constructed using mutually orthogonal Latin squares and vice-versa~\cite{wocjan2005NewConstructionMutually, rao2010MutuallyOrthogonalLatin}.
+The eigen-bases of the well-known Pauli operators $\hat{\sigma}_x$, $\hat{\sigma}_y$, and $\hat{\sigma}_z$ constitute mutually unbiased bases, where each vector in a given basis shares an identical degree of overlap with every vector in the other bases~\cite{paterek2009MutuallyUnbiasedBases}.
+Note that the Pauli matrices are $d^2$ order unitary error bases with $d=2$ but they can be generalized to higher order dimensions~\cite{klappenecker2003UnitaryErrorBases}.
+{\small
+\begin{equation*}
+    \sigma_I = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}, \;
+    \sigma_x = \begin{bmatrix} 0 & 1  \\ 1 & 0  \end{bmatrix}, \;
+    \sigma_y = \begin{bmatrix} 0 & -i \\ i & 0  \end{bmatrix}, \;
+    \sigma_z = \begin{bmatrix} 1 & 0  \\ 0 & -1 \end{bmatrix}
+\end{equation*}
+}
+Unitary error bases, also known as unitary operator bases, are the basic primitive in quantum information.
+They were introduced in the mid 1990s, having great use in the area of constructing quantum error correcting codes~\cite{knill1996NonBinaryUnitary, knill1996GroupRepresentationsError, knill1996ConcatenatedQuantumCodes}. 
+Quantum teleportation protocols, dense coding protocols and error correction can be precisely mathematically characterized as unitary error bases~\cite{klappenecker2003UnitaryErrorBases}.
+
+Mutually unbiased bases and unitary error bases are fundamental primitives in quantum information theory.
+They can be constructed using Latin squares and quantum Latin squares.
+Considering their importance, Musto has introduced a way of constructing mutually unbiased bases using orthogonal quantum Latin squares, proving the reciprocal construction of quantum Latin squares from mutually unbiased bases~\cite{musto2017ConstructingMutuallyUnbiased}.
+
+Unitary error bases can also be constructed from quantum Latin squares and a family of Hadamard matrices~\cite{vicary2016QuantumLatinSquares} via one of three known methods, as follows.
+First, the \emph{shift and multiply} method uses classical Latin squares alongside a set of Hadamard matrices~\cite{werner2001AllTeleportationDense}.
+Second, the \emph{Hadamard} method uses two mutually unbiased bases.
+Finally, the \emph{Algebraic} method uses a finite group possessing a projective representation satisfying certain properties~\cite{knill1996GroupRepresentationsError}.
 
 
 \section{Guidelines for writing}
