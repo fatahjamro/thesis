@@ -174,7 +174,8 @@ Time-reversal operators are examples of antilinear operators.
 
 
 \subsubsection{Unitary Operators}
-Unitary operator can be defined as an operator $U$ is a unitary if it is bounded linear operator $( U : H \rightarrow H )$ on Hilbert space and its inverse $U^{-1}$ is equal to its adjoint $U^{\dagger}$, Symbolic representation would be:
+Unitary operator can be defined as an operator $U$ is a unitary if it is bounded linear operator $( U : H \rightarrow H )$ on Hilbert space and its inverse $U^{-1}$ is equal to its adjoint $U^{\dagger}$ (also denoted as $U^*$).
+Unitary operator must satisfy the following property:
 \begin{equation}
   UU^{\dagger} = U^{\dagger}U = I
   \label{eq:unitary}
@@ -186,7 +187,19 @@ The product of two unitary operators is also unitary. For instance, If $U$ and $
   $$(UV)(UV)^{\dagger} = (UV)(V^{\dagger}U^{\dagger}) = 1$$
   $$(UV)^{\dagger}(UV) = (V^{\dagger}U^{\dagger})(UV) = 1$$
 
-The product operator UV is unitary also as in show in above example.
+The product of operator UV is unitary also as in show in above example.
+
+The unitary operators are the isomorphism of the Hilbert space because they preserve the basic structure of the Hilbert space. 
+
+\subsubsection{Unitary Matrices}
+
+If a basis for a finite dimensional Hilbert space is chosen, then the unitary operator can be represented as a unitary matrix. A unitary matrix is a square matrix $U$ ($n$ x $n$) that satisfies the following condition:
+\begin{equation}
+  U^{\dagger}U = UU^{\dagger} = I_{n}
+\end{equation}
+
+This is equivalent to saying that both the rows and the columns of $U$ form an orthonormal basis in $\mathbb{C}^n$ with respect to the standard inner product. The $U$ is also a normal matrix whose eigen values lie on the unit circle.
+
 
 
 \begin{definition}[Unitary Error Basis]
