@@ -200,15 +200,70 @@ If a basis for a finite dimensional Hilbert space is chosen, then the unitary op
 
 This is equivalent to saying that both the rows and the columns of $U$ form an orthonormal basis in $\mathbb{C}^n$ with respect to the standard inner product. The $U$ is also a normal matrix whose eigen values lie on the unit circle.
 
+Let: $$ U_{ij} = \langle v_{i} | U | v_{j} \rangle $$
 
+be the matrix elements of $U$. Then the unitary condition can be written as:
+
+$$ \langle v_{i} | U^{\dagger}U | v_{j} \rangle = \sum_{k} \langle v_{i} | U^{\dagger} | v_{k} \rangle \langle v_{k} | U | v_{j} \rangle $$
+that is:
+$$ \sum_{k} U_{ki}^{*}U_{kj} = \delta_{ij} $$
+
+When a matrix is unitary, the sum of the products of elements of one column with the complex conjugates of the corresponding elements of another column is
+
+- zero if the two columns are different, 
+
+- equal to 1 if they are the same.
+
+\subsubsection{Unitary Error Bases (UEB)}
+
+Unitary error bases, also known as unitary operator bases, are the basic primitive in quantum information. Unitary operators are the building blocks for the unitary error basis. A complete set of unitary operators is used to describe error in quantum information system. 
+Unitary error bases were introduced in the mid 1990s, having great use in the area of constructing quantum error correcting codes~\cite{knill1996NonBinaryUnitary, knill1996GroupRepresentationsError}. 
+
+\subsubsection{Unitary operators and errors}
+
+In quantum mechanics, a unitary operator is a special type of linear transformation that preserves the norm (length) of a quantum state and is reversible. This property makes them ideal for representing errors in quantum computations. Errors can be viewed as transformations applied to a quantum state, potentially altering its information.
 
 \begin{definition}[Unitary Error Basis]
-A set $U$ of $n^2$ unitary $n \times n$ matrices is called a unitary error basis if and only if $U$ is orthonormal with respect to the inner product $\langle A, B \rangle = {\textrm{Tr}(A^\dagger B)} / n$ where $\textrm{Tr}(M)$ is the trace of the matrix $M$ and $M^\dagger$ is the conjugate transpose of $M$.
+\textbf{Orthonormality:} A set $U$ of $n^2$ unitary $n \times n$ matrices is called a unitary error basis if and only if $U$ is orthonormal with respect to the inner product of two elements $A$ and $B$ is defines as:
+
+$$\langle A, B \rangle = {\textrm{Tr}(A^\dagger B)} / n$$
+
+Where $\textrm{Tr}(M)$ is the trace of the matrix $M$ and $M^\dagger$ is the conjugate transpose of $M$. The normalization factor $1/n$ ensures the inner product's value is between 0 and 1.
+\textbf{Completeness:} The set $U$ is complete if any arbitrary error affecting an $n$-dimensional quantum state can be expressed as a linear combination of the elements of $U$. 
 \end{definition}
 
-\noindent Unitary error bases perform a primitive job in quantum error correcting codes and further applications of quantum information processing, such as teleportation and super-dense coding schemes~\cite{klappenecker2003UnitaryErrorBases}.
+Note that the Pauli matrices are $d^2$ order unitary error bases with $d=2$ but they can be generalized to higher order dimensions~\cite{klappenecker2003UnitaryErrorBases}.
+
+{\small
+\begin{equation*}
+    \sigma_I = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}, \;
+    \sigma_x = \begin{bmatrix} 0 & 1  \\ 1 & 0  \end{bmatrix}, \;
+    \sigma_y = \begin{bmatrix} 0 & -i \\ i & 0  \end{bmatrix}, \;
+    \sigma_z = \begin{bmatrix} 1 & 0  \\ 0 & -1 \end{bmatrix}
+\end{equation*}
+}
+
+\subsubsection{Applications of Unitary Error Bases} 
+Unitary error bases have diverse applications in quantum information processing, including:
+\begin{itemize}
+  \item Quantum Error Correction: Unitary error bases are instrumental in designing quantum error correcting codes. These codes help to protect quantum information from errors by encoding it redundantly. These codes enable detection and correction of errors during computation~\cite{knill1996ConcatenatedQuantumCodes}.
+  \item Quantum Teleportation and Dense Coding: Unitary error bases play a crucial role in quantum teleportation and dense coding protocols. Unitary error bases help to mathematically model these protocols which leverage the entanglement of quantum states to transfer quantum information between distant locations~\cite{klappenecker2003UnitaryErrorBases}
+\end{itemize}
+
+\subsubsection{Construction methods of Unitary Error Bases}
+Unitary error are constructed using various methods. Previously, there were three common methods for constructing unitary error bases from 1 to 3 below and 4-th is the recently introduced by \textit{Musto} and \textit{Vicary}:
+\begin{enumerate}
+  \item Shift and Multiply Method: This method uses classical Latin squares alongside a set of Hadamard matrices to construct unitary error bases~\cite{werner2001AllTeleportationDense}.
+  \item Hadamard Method: This method uses two mutually unbiased bases to construct unitary error bases.
+  \item Algebraic Method:  This method uses a finite group possessing a projective representation satisfying certain properties~\cite{knill1996GroupRepresentationsError}.
+  \item Quantum Latin Squares Method: This method uses quantum Latin squares and a family of Hadamard matrices via one of the above three described methods to construct unitary error bases~\cite{vicary2016QuantumLatinSquares}.
+\end{enumerate}
+
 
 \subsection{Mutually Unbiased Bases (MUB)}
+
+The idea of mutually unbiased bases was posed by Schwinger in 1960~\cite{schwinger1960UnitaryOperatorBases} and play an important role in quantum information theory~\cite{klappenecker2004ConstructionsMutuallyUnbiased}.
+They are used in quantum state estimation~\cite{adamson2008ExperimentalQuantumState, grassl2005TomographyQuantumStates}, quantum cryptography protocols, and quantum error correcting codes~\cite{cerf2002SecurityQuantumKey}.
 
 \begin{definition}[Mutually Unbiased Bases]
 Two orthonormal bases $U$ and $V$ of $\mathbb{C}^n$ are mutually unbiased if and only if $|\braket{u|v}|^2 = \frac{1}{n}$ for all $u$ in $U$ and all $v$ in $V$.
@@ -218,34 +273,12 @@ Two orthonormal bases $U$ and $V$ of $\mathbb{C}^n$ are mutually unbiased if and
 Two orthonormal bases of Hilbert space are said to be mutually unbiased if the measurement of one state does not disclose the result of the other state~\cite{song2020ConstructionMutuallyUnbiased}.
 Transition probability from any state of the first basis to any state of the second basis is independent of the two chosen states~\cite{song2020ConstructionMutuallyUnbiased}.
 
-
-\subsubsection*{Mutually Unbiased Bases and Unitary Error Bases}
-The idea of mutually unbiased bases was posed by Schwinger in 1960~\cite{schwinger1960UnitaryOperatorBases} and play an important role in quantum information theory~\cite{klappenecker2004ConstructionsMutuallyUnbiased}.
-They are used in quantum state estimation~\cite{adamson2008ExperimentalQuantumState, grassl2005TomographyQuantumStates}, quantum cryptography protocols, and quantum error correcting codes~\cite{cerf2002SecurityQuantumKey}.
-
 Mutually unbiased bases can be constructed using mutually orthogonal Latin squares and vice-versa~\cite{wocjan2005NewConstructionMutually, rao2010MutuallyOrthogonalLatin}.
 The eigen-bases of the well-known Pauli operators $\hat{\sigma}_x$, $\hat{\sigma}_y$, and $\hat{\sigma}_z$ constitute mutually unbiased bases, where each vector in a given basis shares an identical degree of overlap with every vector in the other bases~\cite{paterek2009MutuallyUnbiasedBases}.
-Note that the Pauli matrices are $d^2$ order unitary error bases with $d=2$ but they can be generalized to higher order dimensions~\cite{klappenecker2003UnitaryErrorBases}.
-{\small
-\begin{equation*}
-    \sigma_I = \begin{bmatrix} 1 & 0  \\ 0 & 1  \end{bmatrix}, \;
-    \sigma_x = \begin{bmatrix} 0 & 1  \\ 1 & 0  \end{bmatrix}, \;
-    \sigma_y = \begin{bmatrix} 0 & -i \\ i & 0  \end{bmatrix}, \;
-    \sigma_z = \begin{bmatrix} 1 & 0  \\ 0 & -1 \end{bmatrix}
-\end{equation*}
-}
-Unitary error bases, also known as unitary operator bases, are the basic primitive in quantum information.
-They were introduced in the mid 1990s, having great use in the area of constructing quantum error correcting codes~\cite{knill1996NonBinaryUnitary, knill1996GroupRepresentationsError, knill1996ConcatenatedQuantumCodes}. 
-Quantum teleportation protocols, dense coding protocols and error correction can be precisely mathematically characterized as unitary error bases~\cite{klappenecker2003UnitaryErrorBases}.
 
 Mutually unbiased bases and unitary error bases are fundamental primitives in quantum information theory.
 They can be constructed using Latin squares and quantum Latin squares.
 Considering their importance, Musto has introduced a way of constructing mutually unbiased bases using orthogonal quantum Latin squares, proving the reciprocal construction of quantum Latin squares from mutually unbiased bases~\cite{musto2017ConstructingMutuallyUnbiased}.
-
-Unitary error bases can also be constructed from quantum Latin squares and a family of Hadamard matrices~\cite{vicary2016QuantumLatinSquares} via one of three known methods, as follows.
-First, the \emph{shift and multiply} method uses classical Latin squares alongside a set of Hadamard matrices~\cite{werner2001AllTeleportationDense}.
-Second, the \emph{Hadamard} method uses two mutually unbiased bases.
-Finally, the \emph{Algebraic} method uses a finite group possessing a projective representation satisfying certain properties~\cite{knill1996GroupRepresentationsError}.
 
 
 \section{Guidelines for writing}
