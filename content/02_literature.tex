@@ -262,17 +262,20 @@ Unitary error are constructed using various methods. Previously, there were thre
 
 \subsection{Mutually Unbiased Bases (MUB)}
 
-The idea of mutually unbiased bases was posed by Schwinger in 1960, his work was focused on a more general mathematical framework~\cite{schwinger1960UnitaryOperatorBases}. The application of mutually unbiased basis in quantum mechanics was given by Ivanovic in 1981, particularly in context of \textit{quantum state determination}~\cite{ivonovic1981geometricaldescriptionquantal}. 
+\subsubsection{Overview of MUB}
+
+Mutually Unbiased Bases (MUB) are fundamental constructs in quantum mechanics and quantum information theory, embedding the complementary concept of quantum formalism~\cite{paterek2010ConnectionMutuallyUnbiased}.
+These bases, when used in pairs, are characterized by the property that knowledge of a quantum state in one basis provides no information about its state in the other, ensuring maximal statistical independence of measurements.
+Transition probability from any state of the first basis to any state of the second basis is independent of the two chosen states~\cite{song2020ConstructionMutuallyUnbiased}.
+
+The idea of mutually unbiased bases was posed by Schwinger in 1960, his work was focused on a more general mathematical framework~\cite{schwinger1960UnitaryOperatorBases}. The application of mutually unbiased basis in quantum mechanics was given by Ivanovic in 1981, particularly in context of \textit{quantum state determination}~\cite{ivanovic1981geometricaldescriptionquantal, ivanovic1997unbiasedprojectorbasis}. 
 and play an important role in quantum information theory~\cite{klappenecker2004ConstructionsMutuallyUnbiased}.
 They are used in quantum state estimation~\cite{adamson2008ExperimentalQuantumState, grassl2005TomographyQuantumStates}, quantum cryptography protocols, and quantum error correcting codes~\cite{cerf2002SecurityQuantumKey}.
 
 \begin{definition}[Mutually Unbiased Bases]
-Two orthonormal bases $U$ and $V$ of $\mathbb{C}^n$ are mutually unbiased if and only if $|\braket{u|v}|^2 = \frac{1}{n}$ for all $u$ in $U$ and all $v$ in $V$.
+Two orthonormal bases $U$ and $V$ in space $\mathbb{C}^n$ are mutually unbiased if and only if the square of the absolute value of the inner product between any vector $u$ from $U$ and any vector $v$ from $V$ is uniformly distributed, i.e.,
+$$|\braket{u|v}|^2 = \frac{1}{n}$$ for all $u$ in $U$ and all $v$ in $V$ ~\cite{wootters1986quantummechanicsprobability}.
 \end{definition}
-
-\noindent Mutually unbiased bases embed the complementary concept of quantum formalism that relates to~\cite{paterek2010ConnectionMutuallyUnbiased}.
-Two orthonormal bases of Hilbert space are said to be mutually unbiased if the measurement of one state does not disclose the result of the other state~\cite{song2020ConstructionMutuallyUnbiased}.
-Transition probability from any state of the first basis to any state of the second basis is independent of the two chosen states~\cite{song2020ConstructionMutuallyUnbiased}.
 
 Mutually unbiased bases can be constructed using mutually orthogonal Latin squares and vice-versa~\cite{wocjan2005NewConstructionMutually, rao2010MutuallyOrthogonalLatin}.
 The eigen-bases of the well-known Pauli operators $\hat{\sigma}_x$, $\hat{\sigma}_y$, and $\hat{\sigma}_z$ constitute mutually unbiased bases, where each vector in a given basis shares an identical degree of overlap with every vector in the other bases~\cite{paterek2009MutuallyUnbiasedBases}.
