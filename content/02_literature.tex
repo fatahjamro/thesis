@@ -265,24 +265,36 @@ Unitary error are constructed using various methods. Previously, there were thre
 \subsubsection{Overview of MUB}
 
 Mutually Unbiased Bases (MUB) are fundamental constructs in quantum mechanics and quantum information theory, embedding the complementary concept of quantum formalism~\cite{paterek2010ConnectionMutuallyUnbiased}.
-These bases, when used in pairs, are characterized by the property that knowledge of a quantum state in one basis provides no information about its state in the other, ensuring maximal statistical independence of measurements.
+These bases, when used in pairs, are characterized by the property that knowledge of a quantum state in one basis provides no information about its state in the other, ensuring maximal statistical independence of measurements~\cite{ivanovic1997unbiasedprojectorbasis}.
 Transition probability from any state of the first basis to any state of the second basis is independent of the two chosen states~\cite{song2020ConstructionMutuallyUnbiased}.
-
-The idea of mutually unbiased bases was posed by Schwinger in 1960, his work was focused on a more general mathematical framework~\cite{schwinger1960UnitaryOperatorBases}. The application of mutually unbiased basis in quantum mechanics was given by Ivanovic in 1981, particularly in context of \textit{quantum state determination}~\cite{ivanovic1981geometricaldescriptionquantal, ivanovic1997unbiasedprojectorbasis}. 
-and play an important role in quantum information theory~\cite{klappenecker2004ConstructionsMutuallyUnbiased}.
-They are used in quantum state estimation~\cite{adamson2008ExperimentalQuantumState, grassl2005TomographyQuantumStates}, quantum cryptography protocols, and quantum error correcting codes~\cite{cerf2002SecurityQuantumKey}.
 
 \begin{definition}[Mutually Unbiased Bases]
 Two orthonormal bases $U$ and $V$ in space $\mathbb{C}^n$ are mutually unbiased if and only if the square of the absolute value of the inner product between any vector $u$ from $U$ and any vector $v$ from $V$ is uniformly distributed, i.e.,
-$$|\braket{u|v}|^2 = \frac{1}{n}$$ for all $u$ in $U$ and all $v$ in $V$ ~\cite{wootters1986quantummechanicsprobability}.
+$$|\braket{u|v}|^2 = \frac{1}{n}$$ for all $u$ in $U$ and all $v$ in $V$ \emph{~\cite{wootters1986quantummechanicsprobability}}.
 \end{definition}
 
-Mutually unbiased bases can be constructed using mutually orthogonal Latin squares and vice-versa~\cite{wocjan2005NewConstructionMutually, rao2010MutuallyOrthogonalLatin}.
-The eigen-bases of the well-known Pauli operators $\hat{\sigma}_x$, $\hat{\sigma}_y$, and $\hat{\sigma}_z$ constitute mutually unbiased bases, where each vector in a given basis shares an identical degree of overlap with every vector in the other bases~\cite{paterek2009MutuallyUnbiasedBases}.
+\subsubsection{Historical Context of MUB}
 
-Mutually unbiased bases and unitary error bases are fundamental primitives in quantum information theory.
-They can be constructed using Latin squares and quantum Latin squares.
-Considering their importance, Musto has introduced a way of constructing mutually unbiased bases using orthogonal quantum Latin squares, proving the reciprocal construction of quantum Latin squares from mutually unbiased bases~\cite{musto2017ConstructingMutuallyUnbiased}.
+The idea of mutually unbiased bases was posed by Schwinger in 1960, his work was focused on a more general mathematical framework~\cite{schwinger1960UnitaryOperatorBases}. 
+The specific application of mutually unbiased basis in quantum mechanics was given by Ivanovic in 1981, particularly in context of \textit{quantum state determination}~\cite{ivanovic1981geometricaldescriptionquantal}. 
+
+\subsubsection{Applications of MUB}
+
+MUBs are crucial in various applications across quantum information theory:
+\begin{itemize}
+  \item Quantum State Estimation: MUBs are used in quantum state estimation to determine the state of a quantum system with high precision~\cite{adamson2008ExperimentalQuantumState, grassl2005TomographyQuantumStates}.
+  \item Quantum Cryptography: MUBs enhance the security protocols in quantum key distribution by ensuring that the eavesdropping attempts can be detected and mitigated effectively~\cite{cerf2002SecurityQuantumKey}.
+  \item Quantum Error Correction: MUBs are used in designing quantum error correcting codes to protect quantum information from errors and noise~\cite{klappenecker2004ConstructionsMutuallyUnbiased}.
+\end{itemize}
+
+\subsubsection{Construction techniques of MUB}
+MUBs can be constructed through various mathematical techniques, one of which involves the use of mutually orthogonal Latin squares - a method that illustrates the deep interconnection between classical combinatorial designs and quantum theoretical constructs~\cite{wocjan2005NewConstructionMutually, rao2010MutuallyOrthogonalLatin}.
+The eigenbases of the well-known Pauli operators $\hat{\sigma}_x$, $\hat{\sigma}_y$, and $\hat{\sigma}_z$ constitute mutually unbiased bases, where each vector in a given basis shares an identical degree of overlap with every vector in the other bases thereby supporting the foundational aspects of quantum measurements and state transformation~\cite{paterek2009MutuallyUnbiasedBases}.
+
+\subsubsection{Recent Developments in MUB}
+Recent advances include the novel construction of orthogonal quantum Latin squares, introduced by Musto. This innovative approach not only broadens the scope of constructing MUBs but also highlights the reciprocal relationship between quantum Latin squares and MUBs, providing new avenues for research and application in quantum information theory~\cite{musto2017ConstructingMutuallyUnbiased}.
+
+Mutually unbiased bases and unitary error bases are fundamental primitives in quantum information theory. They facilitate a variety of critical operations in quantum mechanics, from state determination  and measurement, securing quantum communications to error correction and fault-tolerant quantum computing. Their robust theoretical underpinnings and versatile applications continue to be an area of active research, promising new breakthroughs in quantum computing and cryptography.
 
 
 \section{Guidelines for writing}
